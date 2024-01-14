@@ -1,0 +1,29 @@
+
+# Configurações do meu projeto
+name: 'crypto_unificada'
+version: '1.0.0'
+config-version: 2
+
+# Profile do projeto
+profile: 'crypto_unificada'
+
+# Estrutura de diretorios de acordo com a atividade, segue o padrão DBT
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:         # Diretorios que podem ser removidos com o comando `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+
+# Informaçoes sobre os modelos do projeto
+models:
+  crypto_unificada:
+    # Todos os parametros abaixo são padrão para todos os modelos do projeto, mas caso haja
+    # uma configuração especifica no arquivo do modelo, ele sobressai o desse arquivo generico.
+    rescue:
+      +materialized: table
